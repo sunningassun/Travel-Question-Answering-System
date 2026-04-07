@@ -1,0 +1,298 @@
+/* 全局重置与基础样式 */
+* {
+    box-sizing: border-box;
+    font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #1e3c72;
+}
+
+/* 导航栏 */
+nav {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+/* 欢迎页 */
+.welcome-container {
+    text-align: center;
+}
+
+.nav-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.card {
+    display: block;
+    width: 200px;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #1e3c72;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #e9ecef;
+}
+
+/* 控制面板 */
+.control-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 16px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-group label {
+    font-weight: 600;
+}
+
+select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* 问题面板 */
+.questions-panel {
+    background: #fef9e6;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.question-item {
+    background: white;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #e0e0e0;
+}
+
+.question-item:hover {
+    background: #fff3d1;
+    transform: translateX(4px);
+}
+
+/* 结果与回答框 */
+.result-panel {
+    background: #e8f0fe;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.answer-box {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* 指标统计卡片 */
+.metrics-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* 按钮样式 */
+.eval-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn.accurate {
+    background: #2ecc71;
+    color: white;
+}
+
+.btn.accurate:hover {
+    background: #27ae60;
+}
+
+.btn.inaccurate {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn.inaccurate:hover {
+    background: #c0392b;
+}
+
+.btn.secondary {
+    background: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 24px;
+}
+
+.btn.secondary:hover {
+    background: #2980b9;
+}
+
+/* 图表与统计面板 */
+.stats-panel {
+    background: #f1f8e9;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 表格 */
+.stats-table {
+    margin-top: 24px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #2c3e50;
+    color: white;
+}
+
+/* 对话页面 */
+.chat-input {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.chat-input textarea {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.chat-history {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    border-radius: 12px;
+}
+
+.chat-message.user {
+    background: #d1e7dd;
+    text-align: right;
+}
+
+.chat-message.bot {
+    background: #e2e3e5;
+}
+
+.chat-info {
+    font-size: 0.7rem;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}

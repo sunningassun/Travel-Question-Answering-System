@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标准化测试 | 旅游问答评估系统</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="/">🏠 欢迎</a>
+            <a href="/test" class="active">📝 标准化测试</a>
+            <a href="/eval">📊 模型评估</a>
+            <a href="/chat">💬 自由对话</a>
+        </nav>
+
+        <h1>📋 标准化测试问题集</h1>
+
+        <div class="control-bar">
+            <div class="control-group">
+                <label>🔍 模式：</label>
+                <select id="modeSelect">
+                    <option value="pure">纯模型</option>
+                    <option value="rag">RAG检索增强</option>
+                    <option value="collab">🤝 合作模式</option>
+                </select>
+            </div>
+            <div class="control-group" id="modelGroup">
+                <label>🤖 生成模型：</label>
+                <select id="modelSelect">
+                    <option value="R1">DeepSeek-R1</option>
+                    <option value="V3">DeepSeek-V3</option>
+                </select>
+            </div>
+            <div class="control-group" id="collabTypeGroup" style="display:none;">
+                <label>⚙️ 合作组合：</label>
+                <select id="collabTypeSelect">
+                    <option value="R1_to_V3">R1思考 → V3总结</option>
+                    <option value="V3_to_R1">V3思考 → R1总结</option>
+                </select>
+            </div>
+            <div class="control-group" id="retrievalGroup" style="display:none;">
+                <label>⚙️ 检索方式：</label>
+                <select id="retrievalMode">
+                    <option value="hybrid">混合检索</option>
+                    <option value="semantic">纯语义</option>
+                    <option value="keyword">纯关键词</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="questions-panel">
+            <h3>📖 事实型问题</h3>
+            <div id="factualQuestions" class="questions-grid"></div>
+            <h3>🧠 推理型问题</h3>
+            <div id="reasoningQuestions" class="questions-grid"></div>
+            <h3>🔗 多跳推理型问题</h3>
+            <div id="multiHopQuestions" class="questions-grid"></div>
+        </div>
+
+        <div class="result-panel">
+            <h3>📝 回答</h3>
+            <div id="answerBox" class="answer-box" style="min-height: 200px; max-height: 400px; overflow-y: auto;"></div>
+            <div class="metrics">
+                <span>⏱️ 响应时间：<span id="responseTime">-</span> 秒</span>
+                <span>📚 检索文档数：<span id="chunkCount">-</span></span>
+            </div>
+            <div class="eval-buttons">
+                <button id="accurateBtn" class="btn accurate">✓ 准确</button>
+                <button id="inaccurateBtn" class="btn inaccurate">✗ 不准确</button>
+            </div>
+            <div id="evalMessage" class="eval-message"></div>
+        </div>
+    </div>
+    <script src="/static/test.js"></script>
+</body>
+</html>
