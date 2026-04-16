@@ -1,7 +1,7 @@
 import os
 
 # 硅基流动 API 配置
-API_KEY = "sk-uzdvurtsnnxxdrkyomuokdxqdxkojwpjbbzwcvkqjatqmmpw"
+API_KEY = "***********************"
 BASE_URL = "https://api.siliconflow.cn/v1"
 
 # 模型名称（硅基流动上的模型标识）
